@@ -1,3 +1,4 @@
 module.exports = {
-  views: require('./views')
+  views: require('./views'),
+  api: require('./api'),
 }
