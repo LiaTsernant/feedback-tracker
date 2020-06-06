@@ -3,7 +3,7 @@ require('dotenv').config();
 
 async function getDocWithSheets() {
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEETS_ID);
-  await doc.useServiceAccountAuth(require('./client_secret.json'));
+  await doc.useServiceAccountAuth(require('./client-secret.json'));
   await doc.loadInfo(); // loads document properties and worksheets
   let sheetsCount = doc.sheetsByIndex.length;
   let allSheetsData = [];
