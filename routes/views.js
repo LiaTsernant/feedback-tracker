@@ -21,14 +21,4 @@ router.get('/register', (req, res) => {
   });
 });
 
-
-
-
-
-
-
-
-
-
-// router.post('/api/v1/protected_route/login', ctrl.auth.login);
 module.exports = router;
