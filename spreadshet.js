@@ -13,8 +13,10 @@ async function getDocWithSheets() {
   const doc = new GoogleSpreadsheet('1CvttHrbkh-LtZtu-Xfa8zJ1sM2y9EaiBpFpngT7FoYs');
   await doc.useServiceAccountAuth(require('./client_secret.json'));
   await doc.loadInfo(); // loads document properties and worksheets
-  return doc
+  return doc;
 };
+
+const data = getDocWithSheets();
 
 // const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
 // const rows = await sheet.getRows(); // can pass in { limit, offset }
@@ -23,4 +25,4 @@ async function getDocWithSheets() {
 // accessFirstSheet()
 // getDocWithSheets()
 
-module.exports = getDocWithSheets;
+module.exports = data;
