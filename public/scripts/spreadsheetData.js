@@ -18,5 +18,5 @@ async function jsonData(url) { // (1)
   // throw new Error(res.status);
 }
 
-jsonData('/api/v1/protected_routes/doc')
+jsonData('/api/v1/protected_routes/update_database')
   .catch(alert); // Error: 404 (4)
