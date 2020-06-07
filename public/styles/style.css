@@ -1,10 +1,9 @@
 body {
   background-color: white;
-  /* background-color: red; */
   width: 100%;
   height: 100%;
+  font-family: monospace;
 }
-
 
 /* navbar */
 nav {
@@ -43,7 +42,6 @@ li a:hover {
 }
 
 /* end navbar */
-
 section {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -76,6 +74,17 @@ section {
   align-items: center;
 }
 
+.jumbotron {
+  padding: 20px 0;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 100px;
+}
+
+#profile-logo {
+  width: 100px;
+  object-fit: contain;
+}
+
 h6 {
   margin: 0 10px;
 }
@@ -97,8 +106,14 @@ td {
   align-items: center;
 }
 
-
-
 #feedback-list {
   justify-content: start;
+}
+
+#feedback-list li {
+  font-weight: bold;
+}
+
+p {
+  font-weight: normal;
 }
