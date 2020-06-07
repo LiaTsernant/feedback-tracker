@@ -20,7 +20,7 @@
   <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
-    <script src="scripts/spreadsheetData.js"></script>
+  <script defer src="scripts/profile.js"></script>
   <title>Profile</title>
 </head>
 
@@ -35,13 +35,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto d-flex align-items-center justify-content-center">
           <li class="nav-item active">
-            <a class="nav-link" href="./index.html" id="navigation">Profile</a>
+            <a class="nav-link" href="/profile" id="navigation">Profile</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./categories/product/product.html" id="navigation">Reports</a>
+            <a class="nav-link" href="/reports" id="navigation">Weekly Survey</a>
           </li>
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="/classmates" id="navigation">Classmates</a>
+          </li> -->
           <li class="nav-item active">
-            <a class="nav-link" href="categories/wedding/wedding.html" id="navigation">Classmates</a>
+            <a class="nav-link" href="/" id="logout">Log Out</a>
           </li>
         </ul>
       </div>
@@ -50,149 +53,83 @@
   <main>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <div class="row" id="photo">
+        <div class="row">
+          <img src="images/GA-logo.png" id="profile-logo" alt="" srcset="">
+        </div>
+        <div class="row">
           <div class="col-sm-6">
-            <div class="card">
-              <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-            </div>
-          </div>
-        
-          <div class="col-sm-6">
-            <h1>Lorem Ipsum</h1>
-            <h2>SEI 12</h2>
-            <h4>Email: email@email.com</h4>
+            <h1 id="name"></h1>
+            <h2 id="coursetitle"></h2>
+            <h4 id="email"></h4>
           </div>
         </div>
       </div>
     </div>
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <h2>Deliverables record</h2>
-        </div>
-        <div class="row">
-          <h6>Submited</h6>
-          <h6>Incomplete</h6>
-          <h6>Missing</h6>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <table>
-              <tr>
-                <th>Week</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-                <th>HW</th>
-              </tr>
-              <tr>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>6</td>
-              </tr>
-              <tr>
-                <td>7</td>
-              </tr>
-              <tr>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>9</td>
-              </tr>
-              <tr>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>11</td>
-              </tr>
-              <tr>
-                <td>12</td>
-              </tr>
-
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <section id="feedback">
-
       <div class="container">
         <div class="row">
           <h2>Weekly Feedback</h2>
         </div>
         <div class="row" id="feedback-list">
           <ul>
-            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus ab temporibus at ea autem doloribus
-              dolorem doloremque. Odit, ducimus iusto totam voluptas itaque saepe maiores cum fuga, recusandae at
-              inventore?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ipsam reprehenderit molestias molestiae,
-              voluptatum mollitia ipsum voluptas obcaecati debitis asperiores numquam velit officiis harum hic
-              accusantium! Nesciunt odio perferendis cupiditate?</li>
+            <li>
+              Week 0:
+              <p>Welcome to GA!</p>
+            </li>
+            <li>
+              Week 1:
+              <p id="week1"></p>
+            </li>
+            <li>
+              Week 2:
+              <p id="week2"></p>
+            </li>
+            <li>
+              Week 3:
+              <p id="week3"></p>
+            </li>
+            <li>
+              Week 4:
+              <p id="week4"></p>
+            </li>
+            <li>
+              Week 5:
+              <p id="week5"></p>
+            </li>
+            <li>
+              Week 6:
+              <p id="week6"></p>
+            </li>
+            <li>
+              Week 7:
+              <p id="week7"></p>
+            </li>
+            <li>
+              Week 8:
+              <p id="week8"></p>
+            </li>
+            <li>
+              Week 9:
+              <p id="week9"></p>
+            </li>
+            <li>
+              Week 10:
+              <p id="week10"></p>
+            </li>
+            <li>
+              Week 11:
+              <p id="week11"></p>
+            </li>
+            <li>
+              Week 12:
+              <p id="week12"></p>
+            </li>
           </ul>
         </div>
       </div>
-
     </section>
-
-
   </main>
-
 </body>
 
 </html>
