@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cron = require("node-cron");
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -20,6 +21,12 @@ app.use((req, res, next) => {
 
 app.use('/', routes.views);
 app.use('/api/v1/protected_routes', routes.api);
+
+// ---------------------------- CRON ----------------------------
+
+// cron.schedule("* * * * *", function () {
+//   console.log("running a task every minute");
+// });
 
 // -------------------------------------------------------------------------
 app.listen(PORT, () => console.log(`Project is listening at http:localhost:${PORT}`));
