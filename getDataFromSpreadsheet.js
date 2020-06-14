@@ -20,7 +20,8 @@ async function getDataFromSpreadsheet() {
             name: rowRes[j]['Full Name'],
             email: rowRes[j].Email,
             studentId: rowRes[j].StudentId,
-            photo: rowRes[j].Photo,
+            absence: rowRes[j].Absence,
+            late: rowRes[j].Late,
             Week1: rowRes[j].Week1,
             Week2: rowRes[j].Week2,
             Week3: rowRes[j].Week3,
@@ -33,7 +34,22 @@ async function getDataFromSpreadsheet() {
             Week10: rowRes[j].Week10,
             Week11: rowRes[j].Week11,
             Week12: rowRes[j].Week12,
+            hw1: rowRes[j]['HW 1'],
+            hw2: rowRes[j]['HW 2'],
+            hw3: rowRes[j]['HW 3'],
+            hw4: rowRes[j]['HW 4'],
+            hw5: rowRes[j]['HW 5'],
+            hw6: rowRes[j]['HW 6'],
+            hw7: rowRes[j]['HW 7'],
+            hw8: rowRes[j]['HW 8'],
+            hw9: rowRes[j]['HW 9'],
+            hw10: rowRes[j]['HW 10'],
+            project1: rowRes[j]['Project 1'],
+            project2: rowRes[j]['Project 2'],
+            project3: rowRes[j]['Project 3'],
           };
+
+          console.log(student);
 
           allSheetsData.push(student);
         };
