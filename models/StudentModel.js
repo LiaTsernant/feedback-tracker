@@ -28,7 +28,7 @@ const StudentSchema = new mongoose.Schema({
   hw7: String,
   hw8: String,
   hw9: String,
-  hw1: String,
+  hw10: String,
   project1: String,
   project2: String,
   project3: String,
