@@ -8,7 +8,14 @@ let student = JSON.parse(studentData)
 function render() {
   for (let key in student) {
     let element = document.getElementById(key.toLowerCase());
-    if (element) {
+
+    if (student[key] === 'Complete') {
+      element.setAttribute('class', 'complete')
+    } else if (student[key] === 'Incomplete') {
+      element.setAttribute('class', 'incomplete')
+    } else if (student[key] === 'Missing') {
+      element.setAttribute('class', 'missing')
+    } else if (element) {
       element.textContent = `${student[key]}`
     };
   };

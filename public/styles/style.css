@@ -15,7 +15,6 @@ nav {
   color: #fff;
 }
 
-
 .logo {
   height: 30px;
   object-fit: contain;
@@ -42,6 +41,11 @@ li a:hover {
 }
 
 /* end navbar */
+
+h1 {
+  font-size: 40px;
+}
+
 section {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -87,10 +91,40 @@ section {
 
 h6 {
   margin: 0 10px;
+  font-size: 10px;
+}
+
+.complete {
+  background-color: green;
+}
+
+.complete-text {
+  color: green;
+  font-weight: 600;
+}
+
+.incomplete {
+  background-color: goldenrod;
+}
+
+.incomplete-text {
+  color: goldenrod;
+  font-weight: 600;
+}
+
+.missing {
+  background-color: #fa4542;
+}
+
+.missing-text {
+  color: #fa4542;
+  font-weight: 600;
 }
 
 table {
   max-width: 100%;
+   border-collapse: separate;
+  border-spacing: 10px 5px;
 }
 
 th {
@@ -99,11 +133,8 @@ th {
 }
 
 td {
-  font-size: 1.5vw;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 20px;
+  margin: 5px;
 }
 
 #feedback-list {
