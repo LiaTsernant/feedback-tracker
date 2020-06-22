@@ -4,12 +4,27 @@ if (!localStorage.getItem('currentUser')) {
 
 let studentData = localStorage.getItem('currentUser');
 let student = JSON.parse(studentData)
-let feedbackUl = document.getElementById("feedback-elements");
+let homeworkTr = document.getElementById("homework");
 //create dynamic li with content
 
 function render() {
   for (let key in student) {
-    let element = document.getElementById(key.toLowerCase());
+    let element;
+
+    if (key.slice(0, 2) === 'hw' && student[key]) {
+      //create a table head element with the name of the homework
+      let tableHeads = document.getElementById('tableHeads');
+      let tableHeadEL = document.createElement('th');
+      tableHeadEL.textContent = key;
+      tableHeads.appendChild(tableHeadEL);
+
+      //create a square element for each homework
+      element = document.createElement('td');
+      element.setAttribute('id', key);
+      homeworkTr.appendChild(element)
+    } else {
+      element = document.getElementById(key.toLowerCase());
+    };
 
     if (student[key] === 'Complete') {
       element.setAttribute('class', 'complete')
