@@ -4,6 +4,8 @@ if (!localStorage.getItem('currentUser')) {
 
 let studentData = localStorage.getItem('currentUser');
 let student = JSON.parse(studentData)
+let feedbackUl = document.getElementById("feedback-elements");
+//create dynamic li with content
 
 function render() {
   for (let key in student) {

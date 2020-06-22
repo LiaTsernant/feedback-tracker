@@ -3,7 +3,8 @@ require('dotenv').config();
 
 async function getDataFromSpreadsheet() {
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEETS_ID);
-  await doc.useServiceAccountAuth(require('./client-secret.json'));
+  // console.log()
+  await doc.useServiceAccountAuth(require('./client_secret.json'));
   await doc.loadInfo(); // loads document properties and worksheets
   let sheetsCount = doc.sheetsByIndex.length;
   let allSheetsData = [];
@@ -49,7 +50,7 @@ async function getDataFromSpreadsheet() {
             project3: rowRes[j]['Project 3'],
           };
 
-          console.log(student);
+          // console.log(student);
 
           allSheetsData.push(student);
         };

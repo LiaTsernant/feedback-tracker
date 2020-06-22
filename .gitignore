@@ -1,4 +1,4 @@
 node_modules/
 package-lock.json
-client-secret.json
+client_secret.json
 .env
