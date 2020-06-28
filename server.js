@@ -89,6 +89,7 @@ app.get('/api/v1/protected_routes/get_course_titles', (req, res) => {
 });
 
 // ------------------------------------------------------------------------------------- AUTH 
+//Mb change to db.Student.find({email: req.body.email, courseTitle: req.body.courseTitle}) ?
 app.post('/api/v1/protected_routes/login', (req, res) => {
   db.Student.findOne({ email: req.body.email }, (err, foundStudent) => {
     if (err || !foundStudent) {

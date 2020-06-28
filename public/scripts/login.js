@@ -2,30 +2,40 @@ if (localStorage.getItem('currentUser')) {
   window.location.href = '/profile';
 };
 
+//Create title options
+fetch('/api/v1/protected_routes/get_course_titles').
+  then(res => res.json()).
+  then(res => {
+    let titlesContainer = document.getElementById('title-options');
+    for (let i = 0; i < res.courseTitles.length; i += 1) {
+      let option = document.createElement('option');
+      option.textContent = res.courseTitles[i];
+      titlesContainer.appendChild(option)
+    };
+  }).
+  catch(err => console.log(err))
+
 let loginForm = document.getElementById('loginForm');
 loginForm.addEventListener('submit', handleLogin);
 let studentId = document.getElementById('studentId');
-let courseTitle = document.getElementById('courseTitle');
 let studentEmail = document.getElementById('email');
 studentId.value = "";
-courseTitle.value = "";
 studentEmail.value = "";
 
 function handleLogin(event) {
   event.preventDefault();
-  let formData = {};
 
+  let courseTitle = document.getElementById('title-options').value;
+  let formData = {};
   if (studentId.value === "") {
     studentId.classList.add('is-invalid');
-  } else if (courseTitle.value === "") {
-    courseTitle.classList.add('is-invalid')
   } else if (studentEmail.value === "") {
     studentEmail.classList.add('is-invalid')
   } else {
     formData = {
       studentId: studentId.value,
       email: studentEmail.value,
-      courseTitle: courseTitle.value.toUpperCase()
+      courseTitle: courseTitle,
     };
 
     fetch('/api/v1/protected_routes/login', {
@@ -43,7 +53,6 @@ function handleLogin(event) {
           window.location = '/profile';
         } else {
           studentId.classList.add('is-invalid');
-          courseTitle.classList.add('is-invalid');
           studentEmail.classList.add('is-invalid');
         }
       }).
