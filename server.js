@@ -42,10 +42,9 @@ app.get('/reports', (req, res) => {
   });
 });
 
-// ------------------------------------------------------------------------------------- GOOGLE SPREADSHEET CALL 
+// -------------------------------------------------------------------- GOOGLE SPREADSHEET CALL 
 app.get('/api/v1/protected_routes/update_database', (req, res) => {
   getDataFromSpreadsheet().then((data => {
-    // console.log(data)
     db.Student.deleteMany({}, (err, result) => {
       if (err) {
         console.log(err);
@@ -65,6 +64,28 @@ app.get('/api/v1/protected_routes/update_database', (req, res) => {
       });
     });
   }));
+});
+
+// ----------------------------------------------------------------------------- GET COURSE TITLES
+app.get('/api/v1/protected_routes/get_course_titles', (req, res) => {
+  //Find all students from the db
+  db.Student.find({}).
+    exec((err, foundStudents) => {
+      if (err || !foundStudents) {
+        return res.status(400).json({ status: 400, message: 'Cannot find students' });
+      };
+
+      //Created an object for filtering unique titles
+      let titlesObj = {};
+      for (let i = 0; i < foundStudents.length; i += 1) {
+        titlesObj[foundStudents[i].courseTitle] = true;
+      };
+
+      //Created an array with unique titles
+      let titlesArr = Object.keys(titlesObj)
+
+      res.status(200).json({ status: 200, courseTitles: titlesArr });
+    });
 });
 
 // ------------------------------------------------------------------------------------- AUTH 
