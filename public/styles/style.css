@@ -121,6 +121,11 @@ h6 {
   font-weight: 600;
 }
 
+.submitted {
+  background-color:white;
+  font-size: 9px;
+}
+
 table {
   max-width: 100%;
    border-collapse: separate;

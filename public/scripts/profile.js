@@ -32,6 +32,9 @@ function render() {
       element.setAttribute('class', 'incomplete')
     } else if (student[key] === 'Missing') {
       element.setAttribute('class', 'missing')
+    } else if (student[key] === 'Submitted') {
+      element.setAttribute('class', 'submitted')
+      element.textContent = 'Submitted'
     } else if (element) {
       element.textContent = `${student[key]}`
     };
