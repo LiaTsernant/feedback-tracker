@@ -20,5 +20,5 @@ This tracker syncs with Google Spreadsheets throught Google Spreadsheets API, up
 * Bootstrap
 
 ## Next Features:
-* Add surveys about hte course
+* Add surveys about the course
 * Create a game where new students can interact with photos of their classmates and know each other before the first day of the class.
