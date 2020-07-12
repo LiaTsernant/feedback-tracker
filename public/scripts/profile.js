@@ -5,42 +5,70 @@ if (!localStorage.getItem('currentUser')) {
 let studentData = localStorage.getItem('currentUser');
 let student = JSON.parse(studentData)
 let homeworkTr = document.getElementById("homework");
+let outcomesTr = document.getElementById("outcomes-homework");
 //create dynamic li with content
 
 function render() {
   for (let key in student) {
     let element;
 
-    if (key.slice(0, 2) === 'hw' && student[key]) {
-      //create a table head element with the name of the homework
-      let tableHeads = document.getElementById('tableHeads');
-      let tableHeadEL = document.createElement('th');
-      tableHeadEL.textContent = key;
-      tableHeads.appendChild(tableHeadEL);
-
-      //create a square element for each homework
-      element = document.createElement('td');
-      element.setAttribute('id', key);
-      homeworkTr.appendChild(element)
+    //Check if it is a homework data
+    if (key.indexOf('hw') === 0 && student[key]) {
+      handleHomeworkKey(key);
+    } else if (key.indexOf('Outcomes') === 0 && student[key]) {
+      handleOutcomesHomework(key)
     } else {
       element = document.getElementById(key.toLowerCase());
-    };
-
-    if (student[key] === 'Complete') {
-      element.setAttribute('class', 'complete')
-    } else if (student[key] === 'Incomplete') {
-      element.setAttribute('class', 'incomplete')
-    } else if (student[key] === 'Missing') {
-      element.setAttribute('class', 'missing')
-    } else if (student[key] === 'Submitted') {
-      element.setAttribute('class', 'submitted')
-      element.textContent = 'Submitted'
-    } else if (element) {
-      element.textContent = `${student[key]}`
+      //Checks if we found an html element that has id of key
+      if (element) {
+        element.textContent = `${student[key]}`
+      };
     };
   };
 };
 
+function handleOutcomesHomework(key) {
+  let outcomesTableHeads = document.getElementById('outcomes-tableHeads');
+  let outcomesTableHeadEL = document.createElement('th');
+  outcomesTableHeadEL.textContent = key;
+  outcomesTableHeads.appendChild(outcomesTableHeadEL);
+  //create a square element for each homework
+  let element = document.createElement('td');
+  element.setAttribute('id', key);
+  outcomesTr.appendChild(element);
+  // Paint table square
+  addColorToHomework(key, element)
+};
+
+//Render Homework data on the page
+function handleHomeworkKey(key) {
+  let tableHeads = document.getElementById('tableHeads');
+  let tableHeadEL = document.createElement('th');
+  tableHeadEL.textContent = key;
+  tableHeads.appendChild(tableHeadEL);
+  //create a square element for each homework
+  let element = document.createElement('td');
+  element.setAttribute('id', key);
+  homeworkTr.appendChild(element);
+  // Paint table square
+  addColorToHomework(key, element)
+};
+
+// Adds color according to value of the key
+function addColorToHomework(key, element) {
+  if (student[key] === 'Complete') {
+    element.setAttribute('class', 'complete')
+  } else if (student[key] === 'Incomplete') {
+    element.setAttribute('class', 'incomplete')
+  } else if (student[key] === 'Missing') {
+    element.setAttribute('class', 'missing')
+  } else if (student[key] === 'Submitted') {
+    element.setAttribute('class', 'submitted')
+    element.textContent = 'Submitted'
+  };
+};
+
+//Add eventListeners to a button
 let logoutBtn = document.getElementById('logout');
 logoutBtn.addEventListener('click', handleLogout);
 
@@ -48,4 +76,5 @@ function handleLogout() {
   localStorage.removeItem('currentUser');
 };
 
+// Triger render()
 render();
