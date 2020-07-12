@@ -50,17 +50,12 @@ app.get('/api/v1/protected_routes/update_database', (req, res) => {
         console.log(err);
         process.exit();
       };
-      console.log(`Successfully deleted ${result.deletedCount} students.`);
 
       db.Student.create(data, (err, newStudents) => {
         if (err) {
-          console.log(err);
+          res.status(500).json({ status: "500", message: err });
         };
-        let retStudents = [];
-        for (let i = 0; i < newStudents.length; i += 1) {
-          retStudents.push(`${newStudents[i].studentId}`);
-        }
-        res.json(retStudents);
+        res.status(200).json({ message : "OK"});
       });
     });
   }));
@@ -71,8 +66,11 @@ app.get('/api/v1/protected_routes/get_course_titles', (req, res) => {
   //Find all students from the db
   db.Student.find({}).
     exec((err, foundStudents) => {
-      if (err || !foundStudents) {
-        return res.status(400).json({ status: 400, message: 'Cannot find students' });
+      if (err) {
+        res.status(500).json({ status: "500", message: err });
+      }
+      if (!foundStudents) {
+        return res.status(404).json({ status: 404, message: 'Cannot find course titles' });
       };
 
       //Created an object for filtering unique titles
@@ -92,8 +90,12 @@ app.get('/api/v1/protected_routes/get_course_titles', (req, res) => {
 //Mb change to db.Student.find({email: req.body.email, courseTitle: req.body.courseTitle}) ?
 app.post('/api/v1/protected_routes/login', (req, res) => {
   db.Student.findOne({ email: req.body.email }, (err, foundStudent) => {
-    if (err || !foundStudent) {
-      return res.status(400).json({ status: 400, message: 'Cannot find student by email' });
+    if (err) {
+      res.status(500).json({ status: "500", message: err });
+    }
+
+    if (!foundStudent) {
+      return res.status(404).json({ status: 404, message: 'Cannot find a student by email' });
     };
 
     if (req.body.studentId === foundStudent.studentId && req.body.courseTitle === foundStudent.courseTitle) {
