@@ -25,7 +25,7 @@ Test credentials:
 * Email: test@test.com
 * Course Title: SEI 12
 
-(https://ga-feedback-tracker.herokuapp.com)
+https://ga-feedback-tracker.herokuapp.com
 
 ## Next Features:
 * Add surveys about the course
