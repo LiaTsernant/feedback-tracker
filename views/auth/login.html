@@ -48,28 +48,21 @@
         <form id="loginForm">
           <div class="form-group">
             <label>Student ID</label>
-            <input class="form-control" id="studentId" placeholder="ex: 12345">
+            <input type="text" class="form-control" id="studentId" placeholder="ex: 12345">
             <div class="invalid-feedback">
               Please check your student ID
             </div>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input class="form-control" id="email" placeholder="Your Email">
+            <input type="email" class="form-control" id="email" placeholder="Your Email">
             <div class="invalid-feedback">
               Please check your email
             </div>
           </div>
           <div class="form-group">
-            <!-- <label>Course Title</label>
-            <input class="form-control" id="courseTitle" placeholder="ex: SEI 12">
-            <div class="invalid-feedback">
-              Please check your course title
-            </div> -->
-
-            <label for="cars">Course title:</label>
+            <label>Course title:</label>
             <select name="titles" id="title-options">
-              <!-- <option value="volvo"></option> -->
             </select>
           </div>
           <button type="submit" class="btn btn-danger">Log In</button>
