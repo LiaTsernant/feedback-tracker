@@ -36,8 +36,14 @@ app.get('/', (req, res) => {
   res.redirect('/login')
 });
 
-app.get('/reports', (req, res) => {
-  res.sendFile('views/reports.html', {
+app.get('/survey', (req, res) => {
+  res.sendFile('views/feedbackForm.html', {
+    root: __dirname
+  });
+});
+
+app.get('/survey', (req, res) => {
+  res.sendFile('views/feedbackForm.html', {
     root: __dirname
   });
 });
