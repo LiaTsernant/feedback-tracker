@@ -25,6 +25,10 @@ function render() {
       };
     };
   };
+
+  let totalDeliverablesScorePlaceholder = document.getElementById('deliverables');
+  let totalToNum = parseStringToFloatNumber(totalDeliverablesScorePlaceholder.textContent);
+  totalDeliverablesScorePlaceholder.textContent = `${totalToNum}%`;
 };
 
 function handleOutcomesHomework(key) {
@@ -66,6 +70,11 @@ function addColorToHomework(key, element) {
     element.setAttribute('class', 'submitted')
     element.textContent = 'Submitted'
   };
+};
+
+//Converts '62,65' to a number 62,6
+function parseStringToFloatNumber(str) {
+  return parseFloat(str.replace(/,/, '.')).toFixed(1);
 };
 
 //Add eventListeners to a button
