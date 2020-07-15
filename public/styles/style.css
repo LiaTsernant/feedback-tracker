@@ -32,13 +32,19 @@ li a {
   line-height: 40px;
 }
 
-li:hover {
+#logout {
+  background-color: rgb(77, 77, 77);
+}
+
+
+li:hover, #logout:hover {
   background-color: white;
 }
 
 li a:hover {
   color: #fa4542;
 }
+
 
 /* end navbar */
 
