@@ -112,5 +112,11 @@ app.post('/api/v1/protected_routes/login', (req, res) => {
   });
 });
 
+app.get('/*', (req, res) => {
+  res.sendFile('views/errorPage.html', {
+    root: __dirname
+  });
+})
+
 // -------------------------------------------------------------------------
 app.listen(PORT, () => console.log(`Project is listening at http:localhost:${PORT}`));
