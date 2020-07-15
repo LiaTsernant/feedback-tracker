@@ -26,9 +26,12 @@ function render() {
     };
   };
 
+  //Changing deliverables total string with ',' to a number with '.'
   let totalDeliverablesScorePlaceholder = document.getElementById('deliverables');
-  let totalToNum = parseStringToFloatNumber(totalDeliverablesScorePlaceholder.textContent);
-  totalDeliverablesScorePlaceholder.textContent = `${totalToNum}%`;
+  if (totalDeliverablesScorePlaceholder.textContent) {
+    let totalToNum = parseStringToFloatNumber(totalDeliverablesScorePlaceholder.textContent);
+    totalDeliverablesScorePlaceholder.textContent = `${totalToNum}%`;
+  };
 };
 
 function handleOutcomesHomework(key) {
