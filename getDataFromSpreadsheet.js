@@ -60,7 +60,6 @@ async function getDataFromSpreadsheet() {
             Outcomes4: rowRes[j]['Outcomes4'],
             Outcomes5: rowRes[j]['Outcomes5'],
           };
-          // console.log(student);
           allSheetsData.push(student);
         };
       }));
