@@ -1,30 +1,43 @@
-# Feedback Tracker
+Feedback Tracker
+================
+
 #### Project created for General Assembly Academy in San Francisco, CA
 
 ![Main page](/assets/feedback.png)
 
-## What is Feedback Tracker
-For an optimization of providing feedback for students I designed and implemented a project where students can see feedback on their progress, homework completion and attendance statistic.
+What is Feedback Tracker
+------------------------
 
-This tracker syncs with Google Spreadsheets throught Google Spreadsheets API, updates data in database and display information about student's attendance, homework completion and provides feedback from instructors.
+For an optimization of providing feedback for students I designed and
+implemented a project where students can see feedback on their progress,
+homework completion and attendance statistic.
 
-## Technologies Used
-* MongoDB,
-* Express,
-* Nodejs,
-* JavaScript,
-* Google Spreadsheets API,
-* Google Developers Console,
-* HTML5,
-* CSS3,
-* Bootstrap
+This tracker syncs with Google Spreadsheets throught Google Spreadsheets
+API, updates data in database and display information about student\'s
+attendance, homework completion and provides feedback from instructors.
 
-## Code
-This code was my big challenge and my big win.
-I figured out how to access data in Google Spreadsheet and pass it down to my routes.
+Technologies Used
+-----------------
+
+-   MongoDB,
+-   Express,
+-   Nodejs,
+-   JavaScript,
+-   Google Spreadsheets API,
+-   Google Developers Console,
+-   HTML5,
+-   CSS3,
+-   Bootstrap
+
+Code
+----
+
+This code was my big challenge and my big win. I figured out how to
+access data in Google Spreadsheet and pass it down to my routes.
 
 getDataFromSpreadsheet.js
-```javascript
+
+``` {.javascript}
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 require('dotenv').config();
 
@@ -41,10 +54,13 @@ async function getDataFromSpreadsheet() {
 
 ```
 
-For the frontend part, I assigned ID for HTML elements to be the same as keys of the student object for being able to dynamically render data on the page.
+For the frontend part, I assigned ID for HTML elements to be the same as
+keys of the student object for being able to dynamically render data on
+the page.
 
 profile.js
-```javascript
+
+``` {.javascript}
 function render() {
   for (let key in student) {
     let element;
@@ -62,15 +78,20 @@ function render() {
   };
 ```
 
+Link
+----
 
-## Link
 Test credentials:
-* Student ID: 123
-* Email: test@test.com
-* Course Title: SEI 12
 
-https://ga-feedback-tracker.herokuapp.com
+-   Student ID: 123
+-   Email: <test@test.com>
+-   Course Title: SEI 12
 
-## Next Features:
-* Add surveys about the course
-* Create a game where new students can interact with photos of their classmates and know each other before the first day of the class.
+[https://ga-feedback-tracker.herokuapp.com](https://ga-feedback-tracker.herokuapp.com)
+
+Next Features:
+--------------
+
+-   Add surveys about the course
+-   Create a game where new students can interact with photos of their
+    classmates and know each other before the first day of the class.
