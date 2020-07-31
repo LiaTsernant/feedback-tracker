@@ -32,6 +32,14 @@ function render() {
     let totalToNum = parseStringToFloatNumber(totalDeliverablesScorePlaceholder.textContent);
     totalDeliverablesScorePlaceholder.textContent = `${totalToNum}%`;
   };
+
+  //Changing total attendance string with ',' to a number with '.'
+  let totalAttendance = document.getElementById("absence");
+  if (totalAttendance.textContent) {
+    let totalAttendanceToNum = parseStringToFloatNumber(totalAttendance.textContent);
+    totalAttendance.textContent = `${totalAttendanceToNum}`;
+  };
+
 };
 
 function handleOutcomesHomework(key) {
